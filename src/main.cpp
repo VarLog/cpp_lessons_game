@@ -1,11 +1,16 @@
 #include <iostream>
+#include <random>
 
 class Game 
 {
     int run()
     {
-        auto a = 2;
-        auto b = 4;
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<> dis(1, 9);
+
+        auto a = dis(gen);
+        auto b = dis(gen);
 
         auto answer = 0;
 
